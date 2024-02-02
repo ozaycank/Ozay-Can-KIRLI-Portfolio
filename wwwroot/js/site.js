@@ -48,4 +48,18 @@ function reveal() {
         }
     }
 }
+document.addEventListener('DOMContentLoaded', function () {
+        var extraInfo = document.getElementById('extraInfo');
+    var seeMoreBtn = document.getElementById('seeMoreBtn');
 
+    seeMoreBtn.addEventListener('click', function () {
+            // Toggle the visibility of the extra information
+            if (extraInfo.style.display === 'none') {
+        extraInfo.style.display = 'block';
+    seeMoreBtn.textContent = 'See Less';
+            } else {
+        extraInfo.style.display = 'none';
+    seeMoreBtn.textContent = 'See More';
+            }
+        });
+    });
