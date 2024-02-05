@@ -399,6 +399,7 @@ body {
         .work .content .card {
             width: 340px;
             margin: 15px;
+            display: none;
         }
 
             .work .content .card .card-img {
@@ -408,21 +409,30 @@ body {
                 overflow: hidden;
                 border-radius: 10px;
             }
+            .work .content .card .card-text {
+                padding: 10px;
+                text-align: center;
+                color: #000;
+            }
 
                 .work .content .card .card-img img {
                     position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
-                    height: 100%;
+                    height: auto;
                     object-fit: cover;
                     border-radius: 10px;
                     transition: 0.5s ease;
                 }
 
-                    .work .content .card .card-img img:hover {
-                        transform: scale(1.2);
-                    }
+            .work .content .card.active {
+                display: block;
+            }
+
+            .work .content .card .card-img img:hover {
+                transform: scale(1.2);
+            }
 
 .contact .content {
     display: flex;

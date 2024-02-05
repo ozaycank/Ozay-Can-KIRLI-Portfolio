@@ -34,14 +34,13 @@ scrollBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("scroll", reveal);
-
 function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
+    let reveals = document.querySelectorAll(".reveal");
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = reveals[i].getBoundingClientRect().top;
-        var revealPoint = 50;
+    for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let revealTop = reveals[i].getBoundingClientRect().top;
+        let revealPoint = 50;
 
         if (revealTop < windowHeight - revealPoint) {
             reveals[i].classList.add("active");
@@ -49,17 +48,21 @@ function reveal() {
     }
 }
 document.addEventListener('DOMContentLoaded', function () {
-        var extraInfo = document.getElementById('extraInfo');
+    var extraInfo = document.getElementById('extraInfo');
     var seeMoreBtn = document.getElementById('seeMoreBtn');
 
     seeMoreBtn.addEventListener('click', function () {
-            // Toggle the visibility of the extra information
-            if (extraInfo.style.display === 'none') {
-        extraInfo.style.display = 'block';
-    seeMoreBtn.textContent = 'See Less';
-            } else {
-        extraInfo.style.display = 'none';
-    seeMoreBtn.textContent = 'See More';
-            }
-        });
+        extraInfo.hidden = !extraInfo.hidden;
+        seeMoreBtn.textContent = extraInfo.hidden ? 'See More' : 'See Less';
     });
+
+    var seeAllBtn = document.getElementById('seeAllBtn');
+    var cards = document.querySelectorAll('.card');
+    seeAllBtn.addEventListener('click', function () {
+        cards.forEach(function (card) {
+            card.classList.add('active');
+        });
+
+        seeAllBtn.style.display = 'none';
+    });
+});
