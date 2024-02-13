@@ -10,4 +10,8 @@
     <Folder Include="wwwroot\CV\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+  </ItemGroup>
+
 </Project>
